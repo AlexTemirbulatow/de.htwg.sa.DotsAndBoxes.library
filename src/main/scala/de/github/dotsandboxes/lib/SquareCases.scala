@@ -1,4 +1,4 @@
 package de.github.dotsandboxes.lib
 
-enum SquareCases:
+enum SquareCase:
   case DownCase, UpCase, RightCase, LeftCase
