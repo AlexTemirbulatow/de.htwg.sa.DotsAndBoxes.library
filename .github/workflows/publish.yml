@@ -20,11 +20,7 @@ jobs:
       - name: Set up sbt
         uses: sbt/setup-sbt@v1
 
-      - name: Cache sbt
-        uses: coursier/cache-action@v6
-
       - name: Publish to GitHub Packages
         env:
-          GITHUB_USERNAME: ${{ github.actor }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: sbt clean publish
