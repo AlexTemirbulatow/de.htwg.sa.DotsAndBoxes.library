@@ -5,8 +5,6 @@ lazy val root = project
   .settings(
     name := "DotsAndBoxesSA_Library",
     version := "0.1.0-SNAPSHOT",
-
     scalaVersion := scala3Version,
-
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test,
   )

@@ -1,4 +1,5 @@
 ThisBuild / organization := "com.github.AlexTemirbulatow"
+ThisBuild / versionScheme := Some("early-semver")
 ThisBuild / publishMavenStyle := true
 ThisBuild / publishTo := Some(
   "GitHub Packages" at "https://maven.pkg.github.com/AlexTemirbulatow/de.htwg.sa.DotsAndBoxes.library"
