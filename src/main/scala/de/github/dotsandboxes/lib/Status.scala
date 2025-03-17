@@ -1,4 +1,4 @@
-package lib
+package de.github.dotsandboxes.lib
 
 enum Status(StringRepresentation: String):
   override def toString = StringRepresentation

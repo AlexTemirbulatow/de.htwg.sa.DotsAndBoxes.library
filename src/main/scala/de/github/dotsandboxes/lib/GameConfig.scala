@@ -1,4 +1,4 @@
-package lib
+package de.github.dotsandboxes.lib
 
 enum BoardSize(val dimensions: (Int, Int)):
   case Small extends BoardSize((4, 3))
