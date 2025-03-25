@@ -4,7 +4,7 @@ lazy val root = project
   .in(file("."))
   .settings(
     name := "dotsandboxes",
-    version := "0.1.4-SNAPSHOT",
+    version := "0.1.5-SNAPSHOT",
     scalaVersion := scala3Version,
     libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.14" % Test
   )
