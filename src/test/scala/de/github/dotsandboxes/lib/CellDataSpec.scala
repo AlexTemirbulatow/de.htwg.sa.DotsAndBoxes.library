@@ -15,9 +15,9 @@ class CellDataSpec extends AnyWordSpec {
         Vector(true, false, true)
       ),
       Vector(
-        Vector(Status.Empty, Status.Blue),
-        Vector(Status.Red, Status.Green),
-        Vector(Status.Empty, Status.Yellow)
+        Vector("-", "B"),
+        Vector("R", "R"),
+        Vector("-", "Y")
       ),
     )
     "have row cells" in {
@@ -35,9 +35,9 @@ class CellDataSpec extends AnyWordSpec {
     "have status cells" in {
       cellData.statusCells.size shouldBe 3
       cellData.statusCells(0).size shouldBe 2
-      cellData.statusCells(0)(0) shouldBe Status.Empty
-      cellData.statusCells(1)(0) shouldBe Status.Red
-      cellData.statusCells(2)(1) shouldBe Status.Yellow
+      cellData.statusCells(0)(0) shouldBe "-"
+      cellData.statusCells(1)(0) shouldBe "R"
+      cellData.statusCells(2)(1) shouldBe "Y"
     }
   }
 }
