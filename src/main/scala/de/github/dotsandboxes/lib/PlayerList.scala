@@ -1,6 +1,4 @@
 package de.github.dotsandboxes.lib
-import de.github.dotsandboxes.lib.PlayerType
-import de.github.dotsandboxes.lib.Status
 
 case class Player(playerId: String, points: Int, status: Status, playerType: PlayerType)
 

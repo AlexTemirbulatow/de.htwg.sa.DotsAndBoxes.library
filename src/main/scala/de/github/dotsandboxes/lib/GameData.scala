@@ -8,20 +8,16 @@ case class FieldData(
 )
 
 case class GameBoardData(
-  playerType: PlayerType,
+  currentPlayer: Player,
   rowCells: Vector[Vector[Boolean]],
   colCells: Vector[Vector[Boolean]],
   statusCells: Vector[Vector[String]]
 )
 
-case class PlayerTurnData(
-  currentPlayer: String,
-  currentPoints: Int,
-  playerList: Vector[Player]
-)
-
-case class PlayerResultData(
+case class PlayerGameData(
+  currentPlayer: Player,
   winner: String,
+  stats: String,
   playerList: Vector[Player]
 )
 
