@@ -39,8 +39,14 @@ jobs:
       - name: Set up sbt
         uses: sbt/setup-sbt@v1
 
-      - name: Build Project and Run Tests
-        run: sbt test
+      - name: Run Tests with Coverage
+        run: sbt clean coverage test coverageReport
+
+      - name: Export Coverage
+        env:
+          COVERALLS_REPO_TOKEN: ${{ secrets.COVERALLS_REPO_TOKEN }}
+        run:
+          sbt coveralls
 
   publish:
     runs-on: ubuntu-latest
