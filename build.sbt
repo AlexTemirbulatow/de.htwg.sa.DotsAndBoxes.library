@@ -1,5 +1,5 @@
 val scala3Version = "3.6.4"
-val libVersion = "1.0.2"
+val libVersion = "1.0.3"
 
 lazy val root = project
   .in(file("."))
@@ -22,3 +22,15 @@ ThisBuild / credentials += Credentials(
   sys.env.getOrElse("GITHUB_USERNAME", ""),
   sys.env.getOrElse("GITHUB_TOKEN", "")
 )
+
+import org.scoverage.coveralls.Imports.CoverallsKeys._
+coverageEnabled := true
+coverallsTokenFile := sys.env.get("COVERALLS_REPO_TOKEN")
+coverallsService := Some(org.scoverage.coveralls.GitHubActions)
+coverageFailOnMinimum := false
+coverageMinimumStmtTotal := 0
+coverageMinimumBranchTotal := 0
+coverageMinimumStmtPerPackage := 0
+coverageMinimumBranchPerPackage := 0
+coverageMinimumStmtPerFile := 0
+coverageMinimumBranchPerFile := 0
