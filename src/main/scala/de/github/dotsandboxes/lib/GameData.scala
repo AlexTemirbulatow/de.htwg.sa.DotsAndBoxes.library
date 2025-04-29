@@ -25,3 +25,16 @@ case class FieldSizeData(
   rowSize: Int,
   colSize: Int
 )
+
+case class PlayerStats(
+  avgMoveDuration: Int,
+  minMoveDuration: Int,
+  maxMoveDuration: Int,
+  longestMoveStreak: Int,
+  numOfTotalMoves: Int
+)
+
+case class GameStats(
+  totalDuration: Int,
+  playerStats: Map[String, PlayerStats]
+)

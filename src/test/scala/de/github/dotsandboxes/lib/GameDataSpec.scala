@@ -48,5 +48,27 @@ class GameDataSpec extends AnyWordSpec {
       fieldSizeData.rowSize shouldBe 5
       fieldSizeData.colSize shouldBe 6
     }
+    "have the correct PlayerStats" in {
+      val playerStats = PlayerStats(1, 2, 3, 4, 5)
+      playerStats.avgMoveDuration shouldBe 1
+      playerStats.minMoveDuration shouldBe 2
+      playerStats.maxMoveDuration shouldBe 3
+      playerStats.longestMoveStreak shouldBe 4
+      playerStats.numOfTotalMoves shouldBe 5
+    }
+    "have the correct GameStats" in {
+      val playerStats = PlayerStats(1, 2, 3, 4, 5)
+      val gameStats = GameStats(10, Map("Blue" -> playerStats))
+
+      gameStats.totalDuration shouldBe 10
+      gameStats.playerStats should contain key "Blue"
+
+      val blueStats = gameStats.playerStats("Blue")
+      blueStats.avgMoveDuration shouldBe 1
+      blueStats.minMoveDuration shouldBe 2
+      blueStats.maxMoveDuration shouldBe 3
+      blueStats.longestMoveStreak shouldBe 4
+      blueStats.numOfTotalMoves shouldBe 5
+    }
   }
 }
